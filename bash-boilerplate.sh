@@ -6,7 +6,7 @@
 
 # http://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html
 
-_log_prefix="[TRK] ${BASH_SOURCE}:"
+_log_prefix="${BASH_SOURCE}:"
 
 # NOTE: Set 'BASH_XTRACE=true' to get bash "stacktraces" and see where this script failed
 function handle_bash_xtrace() {
