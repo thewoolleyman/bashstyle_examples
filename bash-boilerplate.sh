@@ -2,7 +2,7 @@
 
 ###
 ### Bash setup
-### https://github.com/thewoolleyman/bashstyle_examples/blob/master/bash-boilerplate.sh
+### https://raw.githubusercontent.com/thewoolleyman/bashstyle_examples/master/bash-boilerplate.sh
 ###
 
 # http://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html
