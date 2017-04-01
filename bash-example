@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-source "$(dirname "${BASH_SOURCE}")/bash-boilerplate.sh"
+dir=$(dirname ${BASH_SOURCE})
+source "${dir}/bash-boilerplate.sh"
+
+onexit_hook() {
+  echo 'Custom onexit hook invoked...'
+}
 
 bye() {
   local should_be_excited="${1}"
@@ -20,6 +25,7 @@ print_usage_and_exit() {
   printf "Options:\n"
   printf "    -d, --debug                 Debug git-rflow script with bash xtrace\n"
   printf "    -e, --excited               Makes bye excited!\n"
+  printf "    -f, --fail                  Force script to fail and demonstrate onexit hooks\n"
   printf "    -h, --help                  Display this [h]elp\n"
   printf "    -V, --version               Display the program [v]ersion\n"
   printf "    --                          Ignore all following options\n"
@@ -65,6 +71,9 @@ parse_options() {
         ;;
       -e|--excited)
         excited=true
+        ;;
+      -f|--fail)
+        ls /dev/nonexistent_file
         ;;
       -h|--help)
         print_usage_and_exit
