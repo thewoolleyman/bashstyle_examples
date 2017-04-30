@@ -4,7 +4,8 @@ dir=$(dirname ${BASH_SOURCE})
 source "${dir}/bash-boilerplate.sh"
 
 onexit_hook() {
-  echo 'Custom onexit hook invoked...'
+  # This can contain any additional logic to be performed on exit, regardless of exit code success/failure.
+  echo 'Exiting ${BASH_SOURCE}...'
 }
 
 bye() {
