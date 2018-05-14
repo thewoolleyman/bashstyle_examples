@@ -34,7 +34,7 @@ set -o pipefail # fail when pipelines contain an error (see http://www.gnu.org/s
 fd=0
 if [[ -t "${fd}" || -p /dev/stdin ]]; then
   # only do this on interactive shells
-  set -o nounset # AKA -u - guard against unused variables (see http://mywiki.wooledge.org/BashFAQ/035)
+  set -o nounset # AKA -u - guard against unused variables (see http://mywiki.wooledge.org/BashFAQ/112)
 fi
 
 function onexit() {
