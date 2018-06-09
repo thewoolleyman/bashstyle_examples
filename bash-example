@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
-dir=$(dirname ${BASH_SOURCE})
-source "${dir}/bash-boilerplate.sh"
+set -e # exit on error if we fail while sourcing bash-boilerplate.sh
+source "$(dirname ${BASH_SOURCE})/bash-boilerplate.sh"
+# If you have `realpath` installed (`brew install coreutils` on MacOS),
+# and want to have a use relative reference to source bash-boilerplate.sh
+# from a different directory via `../` but still have it result in a
+# clean absolute path with no dots, then the following alternative to the
+# above command will remove the dots.
+# source $(realpath "$(dirname "${BASH_SOURCE}")/bash-boilerplate.sh")
 
 onexit_hook() {
   # This can contain any additional logic to be performed on exit, regardless of exit code success/failure.
